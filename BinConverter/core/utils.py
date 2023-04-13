@@ -79,7 +79,7 @@ def background(self):  # defines the background for each window
     self.setWindowIcon(QtGui.QIcon(os.path.join(self.IMG_DIR, 'GEBA_Logo.png')))  # declaring the icon image
     self.deskW, self.deskH = QtWidgets.QDesktopWidget().availableGeometry().getRect()[2:]  # gets the window resolution
     # self.setWindowState(QtCore.Qt.WindowMaximized) # will maximize the GUI
-    self.setGeometry(0, 0, self.deskW/2, self.deskH/1.75)
+    self.setGeometry(0, 0, int(self.deskW/2), int(self.deskH/1.75))
 
     self.settings_fname = os.path.join(self.SETTINGS_DIR, 'settings.json')
     self.directory_settings = os.path.join(self.SETTINGS_DIR, 'directory.json')
@@ -119,4 +119,3 @@ def find_consec(data):
             if index == len(data) - 1:
                 consecutive_values.append(current_consecutive)
     return consecutive_values
-
